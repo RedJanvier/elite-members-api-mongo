@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', (req, res, next) => {
-    Member.find().exec()
+    Member.find()
         .then(members => {
             const total_members = members.length;
             const total_shares = members.map(item => item.shares).reduce((prev, next) => prev + next);
