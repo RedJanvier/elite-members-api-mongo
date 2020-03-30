@@ -1,6 +1,6 @@
-import { config } from 'dotenv';
-import express from 'express';
 import morgan from 'morgan';
+import express from 'express';
+import { config } from 'dotenv';
 import { connect } from 'mongoose';
 import routes from './api/routes';
 
@@ -27,8 +27,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(__dirname + '/api'));
+app.use('/uploads', express.static(`${__dirname}/uploads`));
 app.use('/api/v2', routes);
-app.use('/uploads', express.static('uploads'));
 
 app.use((req, res, next) => {
   const error = new Error('Resources not found');
