@@ -1,14 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const Shares = require('../models/shares');
+import { Router } from 'express';
+import Shares from '../models/shares';
 
-router.get('/', (req, res, next) => {
-    Shares.find().exec()
-    .then(shares => {
-        res.status(200).json(shares);
-    })
-    .catch(err => res.status(500).json({ error: err }));
+const router = Router();
 
-})
+router.get('/', async (req, res, next) => {
+  try {
+    const shares = await Shares.find().exec();
+    return res.status(200).json(shares);
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+});
 
-module.exports = router;
+export default router;
