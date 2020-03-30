@@ -1,0 +1,24 @@
+sudo: false
+
+language: node_js
+
+env:
+  - MONGO_URI=mongodb://localhost/test
+
+version:
+  - node
+
+services:
+  - mongodb
+
+notifications:
+  email: false
+
+cache:
+  npm: false
+
+script:
+  - npm test
+
+after_success:
+  - npm run coveralls
