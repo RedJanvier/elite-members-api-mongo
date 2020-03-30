@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const sharesSchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    member: { type: mongoose.Schema.Types.ObjectId, ref: 'Member', required: true },
-    shares: { type: Number, default: 1 }
-})
+const sharesSchema = Schema({
+  _id: Schema.Types.ObjectId,
+  member: { type: Schema.Types.ObjectId, ref: 'Member', required: true },
+  shares: { type: Number, default: 1 },
+});
 
-module.exports = mongoose.model('Shares', sharesSchema);
+export default model('Shares', sharesSchema);
