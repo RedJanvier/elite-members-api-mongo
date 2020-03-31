@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node app",
-    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info --ci --forceExit",
     "test": "jest --ci --forceExit",
     "dev": "nodemon --exec babel-node app"
   },
