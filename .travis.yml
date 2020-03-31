@@ -5,7 +5,7 @@ language: node_js
 env:
   - MONGO_URI=mongodb://localhost/test
 
-version:
+node_js:
   - node
 
 services:
