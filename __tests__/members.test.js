@@ -1,8 +1,14 @@
 import request from 'supertest';
+import mongoose from 'mongoose';
 import app from '../app';
 
 describe('[ GET /api/v2/members ] get all members and count', () => {
-  afterAll(() => setTimeout(() => process.exit(), 1000));
+  afterAll(() =>
+    setTimeout(() => {
+      mongoose.connection.close();
+      return process.exit();
+    }, 1000)
+  );
   it('returns an array of all members', (done) => {
     request(app)
       .get('/api/v2/members')
