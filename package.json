@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node app",
-    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-    "test": "jest --detectOpenHandles",
+    "coveralls": "jest --coverage --ci --forceExit && coveralls < coverage/lcov.info",
+    "test": "jest --ci --forceExit",
     "dev": "nodemon --exec babel-node app"
   },
   "keywords": [],
