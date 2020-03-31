@@ -2,6 +2,7 @@ import request from 'supertest';
 import app from '../app';
 
 describe('[ GET /api/v2/members ] get all members and count', () => {
+  afterAll(() => setTimeout(() => process.exit(), 1000));
   it('returns an array of all members', (done) => {
     request(app)
       .get('/api/v2/members')

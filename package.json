@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node app",
     "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --colors --forceExit --ci",
     "dev": "nodemon --exec babel-node app"
   },
   "keywords": [],
