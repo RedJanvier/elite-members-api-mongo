@@ -26,12 +26,11 @@ export const getAll = async (req, res, next) => {
 };
 export const getSingle = async (req, res, next) => {
   try {
-    const user = await Member.findById(req.params.memberId)
-      .select('_id name email location committee shares image')
-      .exec();
-    return res
-      .status(200)
-      .json({ success: true, data: user || 'member not found!' });
+    const [member] = await Member.find({ _id: req.params.memberId }).select(
+      '_id '
+    );
+    delete member.__v;
+    return res.status(200).json({ success: true, data: member });
   } catch (err) {
     return res.status(500).json({ success: false, error: err.message });
   }
