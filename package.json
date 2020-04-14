@@ -4,6 +4,7 @@
   "description": "This is an API made for elite members group with MongoDB database",
   "main": "app.js",
   "scripts": {
+    "seed": "babel-node api/seeders/index",
     "start": "babel-node app",
     "coveralls": "jest --coverage --ci --forceExit && coveralls < coverage/lcov.info",
     "test": "jest --ci --forceExit",
@@ -18,6 +19,7 @@
     "express": "^4.17.1",
     "jest": "^25.2.4",
     "mongoose": "^5.7.5",
+    "mongoose-seed": "^0.6.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
     "supertest": "^4.0.2"
