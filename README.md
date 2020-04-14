@@ -9,11 +9,11 @@ This is a REST API based on Node Js, Express, MongoDB, and JWT for authenticatio
 
 ## Features to implement
 
-- ✔ Member should be able to Join the group
 - ✔ Member should be able to leave the group
 - ✔ Member should be able to update his/her informations
-- ✔ Anyone should be able to get all details of any member
 - ✔ Anyone should be able so see all members of the group
+- ✔ Anyone should be able to get all details of any member
+- ✔ Member should be able to Join the group with image upload
 - ❌ Member (committee) should be able to log into his/her group account
 
 ## Routes
@@ -82,6 +82,7 @@ This is a REST API based on Node Js, Express, MongoDB, and JWT for authenticatio
 - bcrypt
 - jsonwebtokens
 - jest
+- multer
 
 ## Author
 
